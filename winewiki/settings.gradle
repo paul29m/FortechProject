@@ -1,0 +1,4 @@
+rootProject.name = 'wineWiki'
+include 'profile-micro'
+include 'apigateway'
+

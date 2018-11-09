@@ -1,0 +1,2 @@
+include ':profile-micro'
+project(':profile-micro').projectDir = new File(settingsDir, '../profile-micro')

@@ -31,12 +31,12 @@ public class WineTypeController {
     }
 
     @RequestMapping (value = "create", method = RequestMethod.POST)
-    public ApiGatewayNewWineTypeDto createPerson(@RequestBody ApiGatewayNewWineTypeDto newWineTypeDto) {
+    public ApiGatewayNewWineTypeDto createWine(@RequestBody ApiGatewayNewWineTypeDto newWineTypeDto) {
         return wineTypeService.create(newWineTypeDto);
     }
 
     @RequestMapping (value = "update", method = RequestMethod.PUT)
-    public ApiGatewayWineTypeDto updatePerson(@RequestBody ApiGatewayWineTypeDto wineTypeDto) {
+    public ApiGatewayWineTypeDto updateWine(@RequestBody ApiGatewayWineTypeDto wineTypeDto) {
         return wineTypeService.update(wineTypeDto);
     }
 

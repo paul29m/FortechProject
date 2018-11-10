@@ -75,4 +75,14 @@ public class PersonServiceImpl implements PersonService{
         return personMapper.toExternal(dto);
     }
 
+//    @Override
+//    public void resetPassword(String mail) {
+//        restTemplate.postForEntity(this.personServiceUrl + "reset/" + mail + "/", "", Void.class);
+//    }
+//
+//    @Override
+//    public void changePassword(String token, String password) {
+//        restTemplate.postForEntity(this.personServiceUrl + "changepassword/" + token + "?password=" + password, "", Void.class);
+//    }
+
 }

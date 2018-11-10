@@ -1,3 +1,4 @@
+
 allprojects{
     group 'fortech'
     version '1.0-SNAPSHOT'
@@ -47,6 +48,7 @@ allprojects{
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: "$springBootVersion"
         compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "$springBootVersion"
         testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "$springBootVersion"
+        compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: "$springBootVersion"
 
         compile group: 'org.hibernate', name: 'hibernate-core', version: "$hibernateVersion"
 
@@ -56,9 +58,12 @@ allprojects{
         compile group: 'org.springframework.data', name: 'spring-data-jpa', version: "$springDataVersion"
 
         testCompile group: 'org.springframework', name: 'spring-test', version: "$springVersion"
+        compile group: 'org.springframework', name: 'spring-context-support', version: "$springVersion"
 
-        testCompile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: "$sqlServerVersion"
+        compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: "$sqlServerVersion"
+        compile group: 'javax.activation', name: 'activation', version: '1.1.1'
 
+        compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.11'
 
         compile group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
 

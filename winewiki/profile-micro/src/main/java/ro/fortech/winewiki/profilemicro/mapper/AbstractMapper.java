@@ -16,7 +16,7 @@ public abstract class AbstractMapper<Model, Dto> {
     }
 
     public Set<Dto> toExternals(Set<Model> models) {
-//        Set<Dto> dtos = models.stream().map(model -> toExternal(model)).collect(Collectors.toSet());
+//        Set<Dto> dtos = models.stream().map(dto -> toExternal(dto)).collect(Collectors.toSet());
         Set<Dto> dtos = new LinkedHashSet<>();
         for(Model model: models){
             dtos.add(toExternal(model));

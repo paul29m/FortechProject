@@ -23,7 +23,7 @@ public class ApiGatewayNewWineDto implements Serializable {
     public String toString() {
         return "ApiGatewayNewWineDto{" +
                 "title='" + title + '\'' +
-                "description='" + description + '\'' +
+                ", description='" + description + '\'' +
                 ", location='" + location + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +

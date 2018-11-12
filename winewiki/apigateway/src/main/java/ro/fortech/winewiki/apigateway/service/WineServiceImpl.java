@@ -38,9 +38,9 @@ public class WineServiceImpl implements WineService {
     private PersonMapper personMapper;
 
     @Override
-    public ApiGatewayNewWineDto create(ApiGatewayNewWineDto newPersonDto) {
+    public ApiGatewayNewWineDto create(ApiGatewayNewWineDto newWineDto) {
         NewWineDto dto = restTemplate
-                .postForEntity(wineServiceUrl + "create", newWineMapper.toInternal(newPersonDto), NewWineDto.class).getBody();
+                .postForEntity(wineServiceUrl + "create", newWineMapper.toInternal(newWineDto), NewWineDto.class).getBody();
         return newWineMapper.toExternal(dto);
     }
 

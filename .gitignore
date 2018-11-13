@@ -3,7 +3,7 @@
 **/build
 
 #frontend 
-/.idea
+**/.idea
 #compiled output
 **/dist
 **/tmp

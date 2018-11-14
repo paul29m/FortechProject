@@ -1,30 +1,75 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule } from '@angular/material';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
 
-import { AppComponent } from './app.component';
+import {ProfileViewComponent} from './profile/profile-view/profile-view.component';
+import {ProfileEditComponent} from './profile/profile-edit/profile-edit.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AuthenticationService} from './login/authentication.service';
+import {AuthGuard} from './guards/auth.guard';
+import {GlobalApp} from './helpers/global';
+import {PersonService} from './profile/shared/person.service';
+import {NavbarComponent} from './shared/navbar/navbar.component';
+import {FooterComponent} from './shared/footer/footer.component';
+import {AngularMaterialModule} from './angular-material.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {RouterModule} from '@angular/router';
+import {WineViewComponent} from './wine/wine-view/wine-view.component';
+import {WineService} from './wine/shared/wine.service';
+import {WineAddComponent} from './wine/wine-add/wine-add.component';
+import {WineHomeComponent} from './wine/wine-home/wine-home.component';
+import {WinetypeService} from './wine/shared/winetype.service';
+import {ProfileModalComponent} from './profile/profile-modal/profile-modal.component';
+import {NotificationnService} from './profile/shared/notification.service';
+import {WineEditComponent} from './wine/wine-edit/wine-edit.component';
+import {DashboardComponent} from './profile/dashboard/dashboard.component';
+import {ReviewService} from './profile/shared/review.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  entryComponents: [
+    ProfileModalComponent
   ],
-   imports: [
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ProfileViewComponent,
+    ProfileEditComponent,
+    ProfileModalComponent,
+    NavbarComponent,
+    FooterComponent,
+    WineViewComponent,
+    WineAddComponent,
+    WineHomeComponent,
+    WineEditComponent,
+    DashboardComponent,
+  ],
+  imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     HttpModule,
     BrowserAnimationsModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule
+    AngularMaterialModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthenticationService,
+    AuthGuard,
+    GlobalApp,
+    PersonService,
+    WineService,
+    WinetypeService,
+    NotificationnService,
+    ReviewService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

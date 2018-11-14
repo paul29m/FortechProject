@@ -1,0 +1,73 @@
+<div class="wrapper full-screen register">
+  <div class="page-header" style="background-image: url('../assets/img/login-image-2.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6 col-12 mr-auto">
+          <div class="card card-register">
+            <h3 *ngIf="loginBtnVisible" class="card-title text-center">Login</h3>
+            <h3 *ngIf="!loginBtnVisible" class="card-title text-center">Register</h3>
+            <div class="social">
+              <button href="#paper-kit" class="btn btn-just-icon btn-facebook"><i class="fa fa-facebook"></i></button>
+              <button href="#paper-kit" class="btn btn-just-icon btn-google"><i class="fa fa-google"></i></button>
+            </div>
+
+            <div class="division">
+              <div class="line l"></div>
+              <span>or</span>
+              <div class="line r"></div>
+            </div>
+            <form name="form" class="register-form" (ngSubmit)="f.form.valid && logInUser($event)" #f="ngForm"
+                  novalidate>
+              <!--<ngb-alert *ngIf="(f.submitted && !username.valid) || (f.submitted && !password.valid)"-->
+              <!--[type]="'danger'" (close)="closeAlert(this)">-->
+              <!--<div class="container">-->
+              <!--Username and password cannot be empty-->
+              <!--</div>-->
+              <!--</ngb-alert>-->
+              <div class="input-group form-group-no-border" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                <input name="username" type="text" class="form-control" placeholder="Username"
+                       [(ngModel)]="person.username" #username="ngModel" required>
+              </div>
+              <div class="input-group form-group-no-border" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                <input name="password" type="password" class="form-control" #password="ngModel" placeholder="Password"
+                       [(ngModel)]="person.password" required>
+              </div>
+              <button class="btn btn-danger btn-block btn-round" *ngIf="loginBtnVisible">Log
+                In
+              </button>
+              <div *ngIf="signUpVisible">
+                <div ngbDropdown class="d-inline-block dropdown">
+                  <button name="location" #location="ngModel" [(ngModel)]="person.location"
+                          class="btn btn-outline-primary" id="DropdownMenu" ngbDropdownToggle>{{selectedCity}}
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="DropdownMenu" class="dropdown-primary">
+                    <button class="dropdown-item" *ngFor="let city of cities" (click)="changeCity(city)">{{city}}
+                    </button>
+                  </div>
+                  <div class="input-group form-group-no-border"
+                       [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                    <input name="email" type="text" class="form-control" placeholder="Mail"
+                           [(ngModel)]="person.email" #username="ngModel" required>
+                  </div>
+                </div>
+              </div>
+              <button *ngIf="loginBtnVisible" class="btn btn-danger btn-block btn-round" (click)="expandSignUp($event)">
+                Sign Up
+              </button>
+              <button *ngIf="!loginBtnVisible" class="btn btn-danger btn-block btn-round" (click)="signUpUser($event)">
+                Sign Up
+              </button>
+              <a *ngIf="!loginBtnVisible" (click)="hideSignUp($event)"
+                 class="btn-floating btn-large waves-effect waves-light teal hideSignUp center-align pulse"><i
+                class="material-icons">arrow_upward</i></a>
+            </form>
+            <div class="forgot">
+              <a href="/resetpassword" class="btn btn-link btn-danger">Forgot password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

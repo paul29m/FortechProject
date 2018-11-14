@@ -1,0 +1,78 @@
+#home-dropdown-menu {
+  left: -64px !important;
+}
+
+#jobs-dropdown-menu {
+  left: -88px !important;
+}
+
+.image-dropdown .dropdown-toggle:after {
+  content: none;
+}
+
+#profile-dropdown {
+  left: -195px !important;
+  top: 69px !important;
+}
+
+.btn-just-icon {
+  padding: 10px;
+}
+
+.dropdown-wide {
+  min-width: 15rem;
+}
+
+.dropdown-notification {
+  min-width: 22rem;
+  top: 65px !important;
+  left: -310px !important;
+}
+
+.dropdown-notification ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.dropdown-item a {
+  cursor: pointer;
+  color: #66615b;
+  font-weight: 400;
+}
+
+.dropdown-item:hover a {
+  color: #fff;
+}
+
+.alert-paragraph {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 30px;
+}
+
+.alert-padding {
+  padding: 0 10px;
+  display: inline;
+}
+
+.dropdown-notification .dropdown-notification-list .notification-item .notification-text {
+  padding-left: 50px;
+  position: relative;
+  min-width: 330px;
+  min-height: 50px;
+  white-space: normal;
+}
+
+.dropdown-notification .dropdown-notification-list .notification-item .notification-text .message {
+  margin-left: 0;
+}
+
+.dropdown-notification .dropdown-notification-list .notification-item .notification-text .label {
+  top: 35%;
+}
+
+.img-circle {
+  height: 40px;
+  width: 40px;
+}

@@ -1,0 +1,85 @@
+<div class="wrapper profile">
+  <div class="page-header page-header-small" data-parallax="true"
+       style="background-image: url('../assets/img/fabio-mangione.jpg');">
+  </div>
+  <div class="profile-content section">
+    <div class="container">
+      <div class="row">
+        <div class="profile-picture">
+          <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-new img-no-padding">
+              <img [src]="photo" alt="...">
+            </div>
+            <div class="name">
+              <h4 class="title text-center">{{person.username}}<br>
+                <small>{{person.firstname}} {{person.lastname}}</small>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto text-center">
+          <p>{{person.description}} </p>
+          <a class="btn btn-outline-default btn-round" *ngIf="app.localStorageItem('username') === person.username"
+             [routerLink]="['../edit', app.localStorageItem('username')]"><i
+            class="fa fa-cog"></i> Edit</a>
+        </div>
+      </div>
+      <br>
+      <div class="nav-tabs-navigation">
+        <div class="nav-tabs-wrapper">
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#wines-posted" role="tab">Wines Posted</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane text-center" id="wines-posted" role="tabpanel">
+          <!--<button class="btn btn-warning btn-round" [routerLink]="['/wine/create']">Post wines</button>-->
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Wines posted</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row" *ngFor="let wine of wines">
+                <div class="wine">
+                  <h5 class="label label-danger">
+                    WineType: {{wine.wineType}}
+                  </h5>
+                  <h2>
+                    <a routerLink="['/wine/view/{{wine.id}}]">{{wine.title}}</a>
+                  </h2>
+                  <p>
+                    {{wine.description}}
+                  </p>
+                  <button type="button" *ngIf="wine.owner !== app.localStorageItem('username')"
+                          class="btn btn-outline-default btn-round" (click)="seeDetails(wine.id)">View
+                    Details
+                  </button>
+                  <button type="button" *ngIf="wine.owner === app.localStorageItem('username')"
+                          class="btn btn-outline-default btn-round" (click)="editWine(wine.id)">Edit Wine
+
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+        <div class="tab-pane text-center" id="reviews" role="tabpanel">
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+

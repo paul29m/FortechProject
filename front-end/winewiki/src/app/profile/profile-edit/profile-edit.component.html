@@ -1,0 +1,79 @@
+<div class="wrapper settings">
+  <div class="page-header page-header-xs settings-background"
+       style="background-image: url('../assets/img/fabio-mangione.jpg');">
+    <div class="filter"></div>
+  </div>
+  <div class="profile-content section">
+    <div class="container">
+      <div class="row">
+        <div class="profile-picture">
+          <div class="fileinput fileinput-new" data-provides="fileinput">
+            <div class="fileinput-new img-no-padding">
+              <img [src]="'data:image/jpg;base64,' + this.person.picture" alt="...">
+            </div>
+            <div class="fileinput-preview fileinput-exists img-no-padding"></div>
+            <div>
+              <span class="btn btn-outline-default btn-file btn-round">
+                <span class="fileinput-new">Change Photo</span>
+                <span class="fileinput-exists">Change</span>
+                <input type="hidden" value="" name="..."><input type="file" name="" (change)="fileChange($event)">
+              </span>
+              <br>
+              <a href="#!" class="btn btn-link btn-danger fileinput-exists" data-dismiss="fileinput">
+                <i class="fa fa-times"></i>
+                Remove
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <form class="settings-form">
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" class="form-control border-input" placeholder="First Name" name="firstname"
+                         [(ngModel)]="person.firstname" #firstname>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control border-input" placeholder="Last Name" name="lastname"
+                         [(ngModel)]="person.lastname" #lastname>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" class="form-control border-input" placeholder="Location" name="location"
+                     [(ngModel)]="person.location" #location>
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control textarea-limited"
+                        placeholder="This is a textarea limited to 150 characters."
+                        name="description"
+                        rows="3"
+                        maxlength="150"
+                        [(ngModel)]="person.description"
+                        #description></textarea>
+              <h5>
+                <small><span id="textarea-limited-message" class="pull-right">150 characters left</span></small>
+              </h5>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-wd btn-info btn-round" (click)="editProfile()">Save Changes</button>
+              <button type="button" class="btn btn-wd btn-cancel btn-round" (click)="cancel()">Discard Changes</button>
+              <button type="button" class="btn btn-wd btn-danger btn-round" (click)="deleteProfile()">Delete Profile
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

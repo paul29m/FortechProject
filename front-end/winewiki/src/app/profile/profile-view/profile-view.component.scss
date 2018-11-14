@@ -1,0 +1,77 @@
+.title {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+.profile-content {
+  padding-top: 70px !important;
+}
+
+.wine-card {
+  width: 17%;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+.top-left-buffer {
+  margin-top: 70px;
+  margin-left: 60%;
+}
+
+.pagination {
+  margin-left: 75%;
+  margin-top: 25px;
+}
+
+.wine {
+  padding: 4rem 70% 2rem 2.5rem;
+  border-bottom: 3px solid #ebebeb;
+  width: 100%;
+}
+
+.wine h2 {
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.wine h2 a {
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: #1f4c74
+}
+
+.wine p {
+  margin: 2rem 0;
+  font-size: 20px;
+  color: #b7b7b7;
+}
+
+mat-card {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+mat-card-header, mat-card-footer {
+  text-align: center;
+  margin: 0px -24px;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+mat-card-header {
+  border-bottom: 3px solid #ebebeb;
+}
+
+mat-card-footer {
+  border-top: 3px solid #ebebeb;
+}
+
+mat-card-content .row {
+  margin-left: -25px;
+  margin-right: -25px;
+}

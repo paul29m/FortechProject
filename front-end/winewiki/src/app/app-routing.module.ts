@@ -10,7 +10,6 @@ import {WineViewComponent} from './wine/wine-view/wine-view.component';
 import {WineAddComponent} from './wine/wine-add/wine-add.component';
 import {WineHomeComponent} from './wine/wine-home/wine-home.component';
 import {WineEditComponent} from './wine/wine-edit/wine-edit.component';
-import {DashboardComponent} from './profile/dashboard/dashboard.component';
 
 const routes: Routes = [{
   path: '',
@@ -34,10 +33,6 @@ const routes: Routes = [{
     component: ProfileEditComponent
   },
 
-  {
-    path: 'profile/dashboard/:username',
-    component: DashboardComponent
-  },
   {
     path: 'wine/view/:id',
     component: WineViewComponent

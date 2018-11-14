@@ -1,0 +1,84 @@
+<div class="modal-header">
+  <h5 class="modal-title text-center" id="exampleModalLabel">More about {{person.firstname}}</h5>
+  <button type="button" class="close" data-dismiss="modal" (click)="close()">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="wrapper profile">
+    <div class="page-header page-header-small" data-parallax="true"
+         style="background-image: url('../assets/img/fabio-mangione.jpg');">
+    </div>
+    <div class="profile-content section">
+      <div class="container">
+        <div class="row">
+          <div class="profile-picture">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <div class="fileinput-new img-no-padding">
+                <img [src]="'data:image/jpg;base64,' + person.picture" alt="...">
+              </div>
+              <div class="name">
+                <h4 class="title text-center">{{person.username}}<br>
+                  <small>{{person.firstname}} {{person.lastname}}</small>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto text-center">
+            <p>{{person.description}} </p>
+            <br>
+          </div>
+        </div>
+        <br>
+        <!-- Tab panes -->
+        <div class="tab-pane text-center" id="wines-posted" role="tabpanel">
+          <!--<button class="btn btn-warning btn-round" [routerLink]="['/wine/create']">Post wines</button>-->
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Wines posted</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="row" *ngFor="let wine of wines">
+                <div class="wine">
+                  <h5 class="label label-danger">
+                    {{wine.wineType}}
+                  </h5>
+                  <h2>
+                    <a href="#">{{wine.title}}</a>
+                  </h2>
+                  <p>
+                    {{wine.description}}
+                  </p>
+                  <button type="button" *ngIf="wine.owner !== app.localStorageItem('username')"
+                          class="btn btn-outline-default btn-round" (click)="seeDetails(wine.id)">View
+                    Details
+                  </button>
+                  <button type="button" *ngIf="wine.owner === app.localStorageItem('username')"
+                          class="btn btn-outline-default btn-round" (click)="editWine(wine.id)">Edit Wine
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+        <!--<div class="tab-pane active text-center" id="wines-taken" role="tabpanel">-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-6 ml-auto mr-auto">-->
+        <!--<h3 class="text-muted">No wines taken yet :(</h3>-->
+        <!--<button class="btn btn-warning btn-round">Take wines</button>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="divider"></div>
+  <div class="right-side">
+    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal" (click)="close()">Close</button>
+  </div>
+</div>

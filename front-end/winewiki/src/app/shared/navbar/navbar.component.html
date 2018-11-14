@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-danger">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/']" [queryParams]="{}">WineWiki</a>
+    <a class="navbar-brand" [routerLink]="['/wine/home']" [queryParams]="{page: 0,size: 3}">WineWiki</a>
     <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler"
             aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
             (click)="sidebarToggle()">
@@ -32,11 +32,11 @@
             <a class="nav-link" id="home-dropdown-button" ngbDropdownToggle>Browse</a>
             <div ngbDropdownMenu id="home-dropdown-menu" aria-labelledby="home-dropdown-button"
                  class="dropdown-primary">
-              <a [routerLink]="['/']" [queryParams]="" class="dropdown-item">
+              <a [routerLink]="['/vine/home']" [queryParams]="{page: 0,size: 3}" class="dropdown-item">
                 <i class="nc-icon nc-icon nc-planet"></i>
                 Wineries
               </a>
-              <a [routerLink]="['/']" [queryParams]="" class="dropdown-item">
+              <a [routerLink]="['/wine/home']" [queryParams]="{page: 0,size: 3}" class="dropdown-item">
                 <i class="nc-icon nc-icon nc-planet"></i>
                 Wines
               </a>

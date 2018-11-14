@@ -26,9 +26,7 @@ import {WineAddComponent} from './wine/wine-add/wine-add.component';
 import {WineHomeComponent} from './wine/wine-home/wine-home.component';
 import {WinetypeService} from './wine/shared/winetype.service';
 import {ProfileModalComponent} from './profile/profile-modal/profile-modal.component';
-import {NotificationnService} from './profile/shared/notification.service';
 import {WineEditComponent} from './wine/wine-edit/wine-edit.component';
-import {DashboardComponent} from './profile/dashboard/dashboard.component';
 import {ReviewService} from './profile/shared/review.service';
 
 @NgModule({
@@ -46,8 +44,7 @@ import {ReviewService} from './profile/shared/review.service';
     WineViewComponent,
     WineAddComponent,
     WineHomeComponent,
-    WineEditComponent,
-    DashboardComponent,
+    WineEditComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +64,6 @@ import {ReviewService} from './profile/shared/review.service';
     PersonService,
     WineService,
     WinetypeService,
-    NotificationnService,
     ReviewService],
   bootstrap: [AppComponent]
 })

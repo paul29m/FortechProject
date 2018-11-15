@@ -59,9 +59,11 @@
                 {{app.localStorageItem("firstname")}} {{app.localStorageItem("lastname")}}
                 Overview
               </a>
-              <a class="dropdown-item" [routerLink]="['/profile/edit', app.localStorageItem('username')]">
-                <i class="nc-icon nc-settings"></i>
-                Edit Profile
+              <a class="dropdown-item" *ngIf="app.localStorageItem('personId') !== ''">
+                <a [routerLink]="['/profile/edit', app.localStorageItem('username')]">
+                  <i class="nc-icon nc-settings"></i>
+                  Edit Profile
+                </a>
               </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" *ngIf="app.localStorageItem('personId') !== ''">

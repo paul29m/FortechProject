@@ -39,7 +39,7 @@ public class Person extends BaseEntity<Long> {
     private byte[] picture;
 
 
-    @OneToMany(mappedBy="owner")
+    @OneToMany(mappedBy="owner", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<Wine> wineSet;
 
 

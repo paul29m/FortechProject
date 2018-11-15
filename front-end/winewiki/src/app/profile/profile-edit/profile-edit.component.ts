@@ -110,8 +110,10 @@ export class ProfileEditComponent implements OnInit {
     if (confirm('Are you sure you want to delete your profile?')) {
       this.personService.deletePerson('/person/delete', this.person).subscribe(data => {
         this.personService.getPersonsDelete();
-        this.deleteCancel();
       });
+      this.router.navigate(['/login']);
+    } else {
+      this.deleteCancel();
     }
   }
 }

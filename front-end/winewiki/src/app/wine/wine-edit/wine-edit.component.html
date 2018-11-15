@@ -1,0 +1,94 @@
+<div class="wrapper">
+  <div class="main">
+    <div class="section">
+      <div class="container">
+        <div class="col-md-12">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Edit your post</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <!--<h3>Describe the wine you want to add</h3>-->
+              <form>
+                <div class="row">
+                  <div class="col-md-9 col-sm-9">
+                    <div class="form-group">
+                      <h2>Title <span class="icon-danger">*</span></h2>
+                      <input class="form-control border-input" type="text" name="title" value="{{wine.title}}"
+                             [(ngModel)]="wine.title" #title="ngModel">
+                    </div>
+                    <div class="form-group">
+                      <h2>Description <span class="counter" [class.icon-danger]="(255-wine.description.length) === 0">{{255 - wine.description.length}} Characters left</span>
+                      </h2>
+                      <textarea name="description" class="form-control" rows="8" [(ngModel)]="wine.description"
+                                value={{wine.description}} maxlength="255"></textarea>
+                    </div>
+                    <h2>Where is your winery situated? <span class="icon-danger">*</span></h2>
+                    <div ngbDropdown class="d-inline-block dropdown long-dropdown">
+                      <button name="location" #location="ngModel" [(ngModel)]="wine.location"
+                              class="btn btn-danger btn-outline-danger long-dropdown-btn"
+                              id="location-droFpdown" ngbDropdownToggle>{{wine.location}}
+                      </button>
+                      <div ngbDropdownMenu aria-labelledby="location-dropdown" class="dropdown-danger">
+                        <button class="dropdown-item" *ngFor="let city of cities" (click)="wine.location = city">
+                          {{city}}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row inline-column-row">
+                  <div class="col-md-6">
+                    <h2>Start Date <span class="icon-danger">*</span></h2>
+                    <div class="input-group border-input">
+                      <input value={{wine.startDate}} class="form-control border-input" type="date" name="startDate"
+                             [ngModel]="wine.startDate | date:'yyyy-MM-dd'" (ngModelChange)="wine.startDate = $event"
+                             #startDate="ngModel">
+                      <span class="input-group-addon"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h2>End Date <span class="icon-danger">*</span></h2>
+                    <div class="input-group border-input">
+                      <input value={{wine.endDate}} class="form-control border-input" type="date" name="endDate"
+                             [ngModel]="wine.endDate | date:'yyyy-MM-dd'" (ngModelChange)="wine.endDate = $event"
+                             #endDate="ngModel">
+                      <span class="input-group-addon"></span>
+                    </div>
+                  </div>
+                </div>
+                <mat-card-footer>
+                  <div class="row inline-column-row">
+                    <div class="col-md-3 col-sm-3 ml-auto">
+                      <button class="btn btn-outline-danger btn-block btn-round" (click)="cancel()">Cancel</button>
+                    </div>
+                    <div class="col-md-3 col-sm-3 mr-auto">
+                      <button class="btn btn-primary btn-block btn-round" (click)="updateWine()">Update &amp;Publish
+                      </button>
+                    </div>
+                    <div class="col-md-3 col-sm-3 mr-auto">
+                      <button class="btn btn-wd btn-danger btn-round" (click)="deleteWine()">Delete post</button>
+                    </div>
+                  </div>
+                </mat-card-footer>
+              </form>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p class="alert-paragraph" *ngFor="let alert of alertsUpdate">
+  <ngb-alert [type]="alert.type" [dismissible]="false">
+    <div class="container">
+      <div class="alert-padding">
+        {{ alert.message }}
+      </div>
+      <button type="button" name="button" class="close" (click)="closeAlert(alert)">
+        <i class="nc-icon nc-simple-remove"></i>
+      </button>
+    </div>
+  </ngb-alert>
+</p>

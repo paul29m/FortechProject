@@ -1,0 +1,135 @@
+//.wine-card{
+//  width: 30%;
+//  margin-right: 38px;
+//  margin-top: 38px;
+//}
+
+.section {
+  padding: 120px 0;
+}
+
+.form-check-radio:first-child {
+  margin-top: 4px;
+}
+
+mat-card {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+mat-card-header, mat-card-footer {
+  text-align: center;
+  margin: 0px -24px;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+mat-card-header {
+  border-bottom: 3px solid #ebebeb;
+}
+
+mat-card-footer {
+  border-top: 3px solid #ebebeb;
+}
+
+mat-card-content .row {
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+.wine {
+  padding: 4rem 40% 2rem 2.5rem;
+  border-bottom: 3px solid #ebebeb;
+  width: 100%;
+}
+
+.wine h2 {
+  font-size: 3rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.wine h2 a {
+  text-decoration: none;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  color: #1f4c74
+}
+
+.wine p {
+  margin: 2rem 0;
+  font-size: 20px;
+  color: #b7b7b7;
+}
+
+mat-card-content .row:last-child .wine {
+  border: none;
+}
+
+.top-left-buffer {
+  margin-top: 70px;
+  margin-left: 60%;
+}
+
+.btn-apply {
+  background: #f06292;
+  color: white;
+}
+
+.pagination {
+  margin: 0 auto;
+}
+
+a:not([href]):not([tabindex]) {
+  color: #f5593d;
+  cursor: pointer;
+}
+
+.pagination > li.active > a {
+  background-color: #f5593d;
+  color: white;
+  border-color: #f5593d;
+}
+
+.pagination > li > a:hover {
+  background-color: #f5593d;
+  border-color: #f5593d;
+  color: #FFFFFF;
+}
+
+.dropdown {
+  position: initial;
+}
+
+.dropdown a.btn {
+  color: #fff;
+}
+
+#cities-dropdown-menu a {
+  color: rgba(0, 0, 0, .87);
+}
+
+#cities-dropdown-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden
+}
+
+.date .form-control {
+  padding: 0 12px;
+}
+
+:host /deep/ ngb-timepicker .form-control {
+  padding-right: 12px !important;
+}
+
+.date .input-group-addon {
+  padding: 0 .75rem;
+}
+
+.glyphicon-calendar:focus {
+  outline: none;
+}

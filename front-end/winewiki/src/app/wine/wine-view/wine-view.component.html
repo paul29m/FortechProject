@@ -1,0 +1,134 @@
+<div class="wrapper">
+
+  <div class="page-header page-header-small" data-parallax="true"
+       style="background-image: url('../assets/img/fabio-mangione.jpg');">
+  </div>
+  <div class="main">
+    <div class="section">
+      <div class="container">
+
+        <div class="row">
+          <div class="air-card col-md-8">
+            <div class="row">
+              <div class="col-md-11">
+
+                <mat-card>
+                  <mat-card-header>
+                    <h2><span class="label label-danger">Type: {{wine.wineType}}</span></h2>
+                    <h2><span class="label label-primary" style="margin-left: 20px">{{wine.title}}</span></h2>
+                  </mat-card-header>
+                  <div class="row">
+
+                    <div class="pull-left m-d-left">
+                      <i class="material-icons m-a-left" style="display: inline; margin: 20px">date_range</i>
+                    </div>
+                    <div class="pull-left m-b-left">
+                      <h4 class="price" style="display: inline; margin-right: 20px"><strong>StartDate:</strong>
+                        {{wine.startDate}}</h4>
+                    </div>
+                    <div class="pull-left m-b-left">
+                      <h4 class="price" style="display: inline; margin: 20px"><strong>EndDate:</strong> {{wine.endDate}}
+                      </h4><br>
+                    </div>
+
+                  </div>
+
+                  <br><br>
+
+                  <div class="row">
+                    <div class="pull-left">
+                      <i class="material-icons m-c-left" style="display: inline; margin: 20px">credit_card</i>
+                    </div>
+                    <div class="pull-left m-b-left">
+                      <h4 class="price" style="display: inline"><strong>{{wine.cost}} $</strong></h4>
+                    </div>
+                  </div>
+
+                  <br><br>
+
+                  <div class="row">
+                    <div class="pull-left">
+                      <i class="material-icons m-c-left" style="display: inline; margin: 20px">room</i>
+                    </div>
+                    <div class="pull-left m-b-left">
+                      <h4 class="price " style="display: inline"><strong> Location: </strong>{{wine.location}}</h4>
+                    </div>
+                  </div>
+
+                  <br><br>
+                  <mat-card-content>
+                    <br><br>
+                    <h2 class="center m-b-left"> Description </h2>
+                    <hr>
+                    <br>
+                    <div class="row">
+                      <div class="pull-left">
+                        <i class="material-icons m-a-left" style="display:inline; margin-left: 20px">description</i>
+                      </div>
+                      <div class="pull-left" style="display:inline; margin-left: 20px">
+                        <p class="m-a-left description" *ngIf="wine.description == null"> There is no description for
+                          this wien yet. </p>
+                        <p class="price m-a-left" *ngIf=" wine.description != null && wine.description.length < 170">
+                          {{wine.description}} </p>
+                        <p class="m-a-left" *ngIf="wine.description != null &&  wine.description.length >= 170">
+                          {{descrTruncated}} <a href="#" onclick="return false;"
+                                                (click)="showMore()">{{viewDescription}} </a></p>
+
+                      </div>
+                    </div>
+                  </mat-card-content>
+                  <br>
+                  <div class="col-md-3" style="float: right">
+                    <button class="btn btn-danger btn-move-right btn-round"
+                            style="padding-left: 36px; padding-right: 36px"
+                            *ngIf="app.localStorageItem('username') === wine.owner"
+                            (click)="edit()">Edit <i class="nc-icon nc-minimal-right"></i></button>
+                  </div>
+
+                </mat-card>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4">
+            <mat-card>
+              <mat-card-content style="padding-bottom: 32px">
+                <h2><span class="label label-primary" style="margin-left: 20px">Wine person</span>
+                </h2>
+                <div class="row">
+                  <div class="pull-left m-b-left">
+                    <i class="material-icons" style="margin-left: 20px; margin-top: 12px">person</i>
+                  </div>
+                  <div class="pull-left m-b-left">
+                    <h4 class="price" style="margin-left: 20px; margin-top: 12px"><strong>Name: </strong>{{winePerson.firstname}}
+                      {{winePerson.lastname}}</h4>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="pull-left m-b-left">
+                    <i class="material-icons" style="margin-left: 20px; margin-top: 12px">room</i>
+                  </div>
+                  <div class="pull-left m-b-left">
+                    <h4 class="price" style="margin-left: 20px; margin-top: 12px"><strong>Location: </strong>{{winePerson.location}}
+                    </h4>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-top: 32px; margin-bottom: -24px; margin-left: 24px; margin-right: 24px">
+                  <button class="btn btn-danger btn-block btn-round" [routerLink]="['/profile/', wine.owner]">View
+                    &nbsp;<i class="fa fa-chevron-right"></i></button>
+                </div>
+              </mat-card-content>
+
+            </mat-card>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

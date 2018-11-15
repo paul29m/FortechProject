@@ -1,0 +1,164 @@
+.dropdown-danger {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.section {
+  padding: 150px 0;
+  color: #666;
+}
+
+mat-card {
+  color: #666;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 34px;
+}
+
+mat-card-title {
+  margin: 16px;
+}
+
+mat-card-header, mat-card-footer {
+  text-align: center;
+  margin: 0px -24px;
+  padding: 30px;
+  background-color: #f9f9f9;
+}
+
+mat-card-header {
+  border-bottom: 3px solid #ebebeb;
+}
+
+mat-card-footer {
+  border-top: 3px solid #ebebeb;
+}
+
+mat-card-content .row {
+  margin-left: -25px;
+  margin-right: -25px;
+}
+
+.row {
+  border-bottom: 3px solid #ebebeb;
+  padding: 5% 5%;
+  display: block;
+}
+
+.long-dropdown {
+  width: 100%;
+}
+
+.long-dropdown-btn {
+  width: 100%;
+  text-align: left;
+}
+
+.long-dropdown-btn.btn-danger {
+  border-color: #ebebeb;
+}
+
+.long-dropdown-btn.btn-danger:hover,
+.long-dropdown-btn.btn-danger:focus,
+.long-dropdown-btn.btn-danger:active,
+.long-dropdown-btn.btn-danger.active,
+.show > .long-dropdown-btn.btn-danger.dropdown-toggle {
+  border-color: #f33816;
+}
+
+.long-dropdown-btn.btn-outline-danger:hover,
+.long-dropdown-btn.btn-outline-danger:focus,
+.long-dropdown-btn.btn-outline-danger:active,
+.long-dropdown-btn.btn-outline-danger.active,
+.open > .long-dropdown-btn.btn-outline-danger.dropdown-toggle {
+  border-color: #f5593d;
+}
+
+.dropup .dropdown-toggle:after, .dropdown .dropdown-toggle:after {
+  margin-left: 5px;
+  float: right;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.counter {
+  float: right;
+  color: #ccc;
+}
+
+.inline-column-row {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+}
+
+.occurrence-row {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  border: none;
+  padding: 0 2.5% 5%;
+}
+
+.occurrence-box {
+  border: 3px solid #ebebeb;
+  transition: all .5s ease;
+}
+
+.occurrence-box:hover, .occurrence-box.active, .occurrence-box:focus {
+  border-bottom: 6px solid #f33816;
+  transition: all .5s ease;
+}
+
+.occurrence-box:hover .icon, .occurrence-box.active .icon, .occurrence-box:focus .icon {
+  color: #f33816;
+  cursor: pointer;
+}
+
+.info-title {
+  width: 30%;
+  border-bottom: 2px solid #ebebeb;
+  margin: 0 auto 16px;
+}
+
+.occurrence-box:nth-child(2) {
+  border-left: none;
+  border-right: none;
+}
+
+.cost-type-box:hover, .cost-type-box.active, .cost-type-box:focus {
+  border-top: 2px solid #f5593d;
+  border-left: 2px solid #f5593d;
+  border-right: 2px solid #f5593d;
+}
+
+.cost-type-box:hover .icon, .cost-type-box.active .icon, .cost-type-box:focus .icon {
+  color: #f33816;
+  cursor: pointer;
+}
+
+.payment {
+  width: 30%;
+}
+
+mat-card-content .row:last-child {
+  border: none;
+}
+
+//.show > .btn.dropdown-toggle {
+//  background-color: #f5593d;
+//  color: #FFFFFF;
+//  border-color: #f5593d;
+//}
+
+.alert-paragraph {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 30px;
+}

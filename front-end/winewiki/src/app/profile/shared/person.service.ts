@@ -7,7 +7,6 @@ import 'rxjs/add/operator/map';
 
 import {Person} from './person.model';
 import {NewPerson} from './newPerson.model';
-import {Wine} from '../../wine/shared/wine.model';
 
 @Injectable()
 export class PersonService {
@@ -28,15 +27,6 @@ export class PersonService {
       .catch(this.handleError);
   }
 
-  getCompletedJobs(urlNew: string, name: string): Observable<Wine[]> {
-    // console.log(this.http.get(this.personsUrl + urlNew,{withCredentials: true})
-    //   .map(this.extractData)
-    //   .catch(this.handleError));
-    console.log('Inside get completed wines: ', this.personsUrl + urlNew);
-    return this.http.get(this.personsUrl + urlNew + name, {withCredentials: true})
-      .map(this.extractDataJobs)
-      .catch(this.handleError);
-  }
 
   getPersonsDelete(): Observable<Person[]> {
     return this.http.get(this.personsUrl, {withCredentials: true})
@@ -98,19 +88,6 @@ export class PersonService {
       .catch(this.handleError);
   }
 
-  haveCollaborated(reviewer: string, reviewed: string): Observable<any> {
-    return this.http.get(this.personsUrl + '/person/collaborated/' + reviewer + '/' + reviewed, {
-      withCredentials: true
-    })
-      .map(this.handleCollaborated)
-      .catch(this.handleError);
-  }
-
-  handleCollaborated(res: Response) {
-    const body = res.json();
-    return body.value;
-  }
-
   private extractId(res: Response) {
     const body = res.json();
     return body.personId || {};
@@ -131,7 +108,7 @@ export class PersonService {
     return body.persons || {};
   }
 
-  private extractDataJobs(res: Response) {
+  private extractDataWines(res: Response) {
     const body = res.json();
     return body.wines || {};
   }

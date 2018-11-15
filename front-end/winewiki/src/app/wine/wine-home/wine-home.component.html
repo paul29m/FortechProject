@@ -1,0 +1,158 @@
+<div class="wrapper">
+
+  <div class="page-header page-header-small" data-parallax="true"
+       style="background-image: url('../assets/img/fabio-mangione.jpg');">
+  </div>
+  <div class="main">
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <mat-accordion multi="true">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Wine Category
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="form-check-radio">
+                  <label class="form-check-label">
+                    <input class="form-check-input" name="wineType" [(ngModel)]="type"
+                           (ngModelChange)="chooseWineType($event)" value="All"
+                           type="radio"
+                    >
+                    All ({{totalNumberOfWines}})
+                    <span class="form-check-sign"></span>
+                  </label>
+                </div>
+                <div class="form-check-radio" *ngFor="let wineType of wineTypes">
+                  <label class="form-check-label">
+                    <input class="form-check-input" name="wineType" [(ngModel)]="type" [value]="wineType.name"
+                           (ngModelChange)="chooseWineType($event)"
+                           type="radio">
+                    {{wineType.name}} ({{wineType.wines.length}})
+                    <span class="form-check-sign"></span>
+                  </label>
+                </div>
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Wine Location
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div ngbDropdown class="d-inline-block dropdown">
+                  <a class="btn btn-round" id="cities-dropdown-button" ngbDropdownToggle>{{location}}</a>
+                  <div ngbDropdownMenu id="cities-dropdown-menu" aria-labelledby="cities-dropdown-button"
+                       class="dropdown-default">
+                    <a class="dropdown-item" *ngFor="let city of cities" (click)="changeCity(city)">{{city}}</a>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+          <div class="col-md-9">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>Wines offers</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="row" *ngFor="let wine of wines">
+                  <div class="wine">
+                    <h5 class="label label-danger">
+                      {{wine.wineType}}
+                    </h5>
+                    <h2>
+                      <a href="#">{{wine.title}}</a>
+                    </h2>
+                    <p>
+                      {{wine.description}}
+                    </p>
+                    <button type="button" class="btn btn-outline-default btn-round" (click)="seeDetails(wine.id)">View
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </mat-card-content>
+              <mat-card-footer>
+                <div class="row">
+                  <ul class="pagination">
+                    <li class="page-item" *ngIf="!isFirstPage">
+                      <a class="page-link" (click)="goToPreviousPage()">Previous</a>
+                    </li>
+                    <li *ngFor="let page of pages"
+                        class="page-item"
+                        [class.active]="pageNumber === page - 1">
+                      <a class="page-link" (click)="goToPage(page)">{{page}}</a>
+                    </li>
+                    <li class="page-item" *ngIf="!isLastPage">
+                      <a class="page-link" (click)="goToNextPage()">Next</a>
+                    </li>
+                  </ul>
+                </div>
+              </mat-card-footer>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="wrapper profile">-->
+<!--<div class="page-header page-header-small" data-parallax="true" style="background-image: url('../assets/img/fabio-mangione.jpg');">-->
+<!--</div>-->
+<!--<div class="profile-content section">-->
+<!--<div class="container">-->
+<!--<mat-card>-->
+<!--<mat-card-header>-->
+<!--<mat-card-title>See latest wine offers</mat-card-title>-->
+<!--</mat-card-header>-->
+<!--<mat-card-content>-->
+<!--<div class="row" *ngFor="let wine of wines">-->
+<!--<div class="wine">-->
+<!--<h5 class="label label-danger">-->
+<!--{{wine.wineType}}-->
+<!--</h5>-->
+<!--<h2>-->
+<!--<a href="#">{{wine.title}}</a>-->
+<!--</h2>-->
+<!--<p>-->
+<!--{{wine.description}}-->
+<!--</p>-->
+<!--<button type="button" class="btn btn-outline-default btn-round" (click)="seeDetails(wine.id)">View-->
+<!--Details-->
+<!--</button>-->
+<!--</div>-->
+<!--</div>-->
+<!--</mat-card-content>-->
+<!--<mat-card-footer>-->
+<!--<div class="row">-->
+<!--<ul class="pagination">-->
+<!--<li class="page-item" *ngIf="!isFirstPage">-->
+<!--<a class="page-link" (click)="goToPreviousPage()">Previous</a>-->
+<!--</li>-->
+<!--<li *ngFor="let page of pages"-->
+<!--class="page-item"-->
+<!--[class.active]="pageNumber === page - 1">-->
+<!--<a class="page-link" (click)="goToPage(page)">{{page}}</a>-->
+<!--</li>-->
+<!--<li class="page-item" *ngIf="!isLastPage">-->
+<!--<a class="page-link" (click)="goToNextPage()">Next</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</mat-card-footer>-->
+<!--</mat-card>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+
+
+
+
+
+

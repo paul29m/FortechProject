@@ -20,6 +20,12 @@
       </div>
       <div class="row">
         <div class="col-md-6 ml-auto mr-auto text-center">
+            <i class="material-icons m-c-left" style="display: inline; margin: 20px">call</i>
+            <h4 class=" title text-center" style="display: inline"><strong></strong>{{person.phonenumber}}</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto text-center">
           <p>{{person.description}} </p>
           <a class="btn btn-outline-default btn-round" *ngIf="app.localStorageItem('username') === person.username"
              [routerLink]="['../edit', app.localStorageItem('username')]"><i

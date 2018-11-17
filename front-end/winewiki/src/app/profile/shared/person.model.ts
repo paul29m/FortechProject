@@ -5,6 +5,7 @@ export class Person extends NewPerson {
   public firstname: string;
   public lastname: string;
   public description: string;
+  public phonenumber: string;
   public picture: string;
 
   constructor(username?: string,
@@ -14,6 +15,7 @@ export class Person extends NewPerson {
               firstname?: string,
               lastname?: string,
               description?: string,
+              phonenumber?: string,
               picture?: string
   ) {
     super(username, password, location, '');
@@ -21,6 +23,7 @@ export class Person extends NewPerson {
     this.firstname = firstname;
     this.lastname = lastname;
     this.description = description;
+    this.phonenumber = phonenumber;
     this.picture = picture;
   }
 }

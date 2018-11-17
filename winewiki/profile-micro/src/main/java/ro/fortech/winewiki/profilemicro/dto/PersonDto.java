@@ -9,6 +9,7 @@ public class PersonDto extends NewPersonDto {
     private String description;
     private byte[] picture;
     private WineDtoList wines;
+    private String phonenumber;
     private String mail;
     private String resettoken;
 
@@ -22,6 +23,7 @@ public class PersonDto extends NewPersonDto {
                      String firstname,
                      String lastname,
                      String description,
+                     String phonenumber,
                      byte[] picture,
                      WineDtoList wines) {
         super(username, password, location, "");
@@ -29,6 +31,7 @@ public class PersonDto extends NewPersonDto {
         this.firstname = firstname;
         this.lastname = lastname;
         this.description = description;
+        this.phonenumber = phonenumber;
         this.id = id;
         this.wines = wines;
     }
@@ -53,6 +56,10 @@ public class PersonDto extends NewPersonDto {
         return picture;
     }
 
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
     public WineDtoList getWines() {
         return wines;
     }
@@ -64,6 +71,7 @@ public class PersonDto extends NewPersonDto {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", description='" + description + '\'' +
+                ", description='" + phonenumber + '\'' +
                 ", picture=" + Arrays.toString(picture) +
                 ", wines=" + wines +
                 '}';

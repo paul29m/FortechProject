@@ -7,6 +7,7 @@ public class ApiGatewayPersonDto extends ApiGatewayNewPersonDto {
     private String firstname;
     private String lastname;
     private String description;
+    private String phonenumber;
     private byte[] picture;
     private ApiGatewayWineDtoList wines;
 
@@ -20,6 +21,7 @@ public class ApiGatewayPersonDto extends ApiGatewayNewPersonDto {
                                String firstname,
                                String lastname,
                                String description,
+                               String phonenumber,
                                byte[] picture,
                                ApiGatewayWineDtoList wineDtoList) {
         super(username, password, location, "");
@@ -27,6 +29,7 @@ public class ApiGatewayPersonDto extends ApiGatewayNewPersonDto {
         this.firstname = firstname;
         this.lastname = lastname;
         this.description = description;
+        this.phonenumber = phonenumber;
         this.id = id;
         this.wines = wineDtoList;
     }
@@ -55,6 +58,10 @@ public class ApiGatewayPersonDto extends ApiGatewayNewPersonDto {
         return wines;
     }
 
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
     @Override
     public String toString() {
         return "ApiGatewayPersonDto{" +
@@ -62,6 +69,7 @@ public class ApiGatewayPersonDto extends ApiGatewayNewPersonDto {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", description='" + description + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
                 ", picture=" + Arrays.toString(picture) +
                 ", wines=" + wines +
                 '}';

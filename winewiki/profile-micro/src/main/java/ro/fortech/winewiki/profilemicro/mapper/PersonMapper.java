@@ -27,6 +27,7 @@ public class PersonMapper extends AbstractMapper<Person, PersonDto> {
                     .firstname(dto.getFirstname())
                     .lastname(dto.getLastname())
                     .description(dto.getDescription())
+                    .phonenumber(dto.getPhonenumber())
                     .picture(dto.getPicture())
                     .wineSet(dto.getWines().getWineDtoList().stream()
                             .map(wineDto -> wineRepository.findOne(wineDto.getId()))
@@ -42,6 +43,7 @@ public class PersonMapper extends AbstractMapper<Person, PersonDto> {
                     .firstname(dto.getFirstname())
                     .lastname(dto.getLastname())
                     .description(dto.getDescription())
+                    .phonenumber(dto.getPhonenumber())
                     .picture(dto.getPicture())
                     .wineSet(new LinkedHashSet<>())
                     .build();
@@ -57,6 +59,7 @@ public class PersonMapper extends AbstractMapper<Person, PersonDto> {
                     model.getFirstname(),
                     model.getLastname(),
                     model.getDescription(),
+                    model.getPhonenumber(),
                     model.getPicture(),
                     new WineDtoList(model.getWineSet().stream()
                             .map(wine -> new WineDto(wine.getId(), wine.getTitle(), wine.getDescription(),
@@ -70,6 +73,7 @@ public class PersonMapper extends AbstractMapper<Person, PersonDto> {
                     model.getFirstname(),
                     model.getLastname(),
                     model.getDescription(),
+                    model.getPhonenumber(),
                     model.getPicture(),
                     new WineDtoList(new LinkedHashSet<>()));
             return personDto;

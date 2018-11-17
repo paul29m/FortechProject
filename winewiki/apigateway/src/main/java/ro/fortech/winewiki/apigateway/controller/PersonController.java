@@ -52,6 +52,7 @@ public class PersonController {
                 personDto.getFirstname(),
                 personDto.getLastname(),
                 personDto.getDescription(),
+                personDto.getPhonenumber(),
                 content,
                 personDto.getWines());
 
@@ -70,6 +71,7 @@ public class PersonController {
                 personDto.getFirstname(),
                 personDto.getLastname(),
                 personDto.getDescription(),
+                personDto.getPhonenumber(),
                 null,
                 personDto.getWines());
 

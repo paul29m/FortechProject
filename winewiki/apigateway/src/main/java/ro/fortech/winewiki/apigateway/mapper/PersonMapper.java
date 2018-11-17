@@ -24,6 +24,7 @@ public class PersonMapper extends AbstractMapper<PersonDto, ApiGatewayPersonDto>
                     dto.getFirstname(),
                     dto.getLastname(),
                     dto.getDescription(),
+                    dto.getPhonenumber(),
                     dto.getPicture(),
                     new WineDtoList(dto.getWines().getApiGatewayWineDtoList().stream()
                             .map(wine -> wineMapper.toInternal(wine))
@@ -34,6 +35,7 @@ public class PersonMapper extends AbstractMapper<PersonDto, ApiGatewayPersonDto>
                     dto.getFirstname(),
                     dto.getLastname(),
                     dto.getDescription(),
+                    dto.getPhonenumber(),
                     dto.getPicture(),
                     new WineDtoList(new LinkedHashSet<>()));
             return personDto;
@@ -47,6 +49,7 @@ public class PersonMapper extends AbstractMapper<PersonDto, ApiGatewayPersonDto>
                 model.getFirstname(),
                 model.getLastname(),
                 model.getDescription(),
+                model.getPhonenumber(),
                 model.getPicture(),
                 new ApiGatewayWineDtoList(model.getWines().getWineDtoList().stream()
                         .map(wine -> new ApiGatewayWineDto(wine.getId(), wine.getTitle(), wine.getDescription(),

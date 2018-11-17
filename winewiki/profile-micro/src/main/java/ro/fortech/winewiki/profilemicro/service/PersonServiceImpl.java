@@ -90,11 +90,11 @@ public class PersonServiceImpl implements PersonService {
     @Transactional
     public PersonDto update(PersonDto personDto) {
         Person personToUpdate = personRepository.findOne(personDto.getId());
-// TODO make proper update with consideration of relationships
         String firstName = personDto.getFirstname();
         String lastName = personDto.getLastname();
         String description = personDto.getDescription();
         String location = personDto.getLocation();
+        String phonenumber = personDto.getPhonenumber();
         byte[] pic = personDto.getPicture();
         if (firstName != EMPTY_STRING) {
             personToUpdate.setFirstname(personDto.getFirstname());
@@ -104,6 +104,10 @@ public class PersonServiceImpl implements PersonService {
         }
         if (description != EMPTY_STRING) {
             personToUpdate.setDescription(personDto.getDescription());
+        }
+
+        if (phonenumber != EMPTY_STRING) {
+            personToUpdate.setPhonenumber(personDto.getPhonenumber());
         }
         if (location != EMPTY_STRING) {
             personToUpdate.setLocation(personDto.getLocation());

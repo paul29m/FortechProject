@@ -39,6 +39,9 @@ public class Person extends BaseEntity<Long> {
     private byte[] picture;
 
 
+    @Column(name = "phonenumber")
+    private String phonenumber;
+
     @OneToMany(mappedBy="owner", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private Set<Wine> wineSet;
 

@@ -55,6 +55,12 @@
                         </button>
                       </div>
                     </div>
+                    <h2>Payment <span class="icon-danger">*</span></h2>
+                    <div class="input-group border-input payment">
+                      <input value="" class="form-control border-input" type="text" name="money"
+                             [(ngModel)]="wine.cost" #money="ngModel">
+                      <span class="input-group-addon"><i class="fa fa-euro"></i></span>
+                    </div>
                   </div>
                 </div>
                 <div class="row inline-column-row">
@@ -80,7 +86,7 @@
                 <mat-card-footer>
                   <div class="row inline-column-row">
                     <div class="col-md-3 col-sm-3 ml-auto">
-                      <button class="btn btn-outline-danger btn-block btn-round">Cancel</button>
+                      <button class="btn btn-outline-danger btn-block btn-round" (click)="cancel()">Cancel</button>
                     </div>
                     <div class="col-md-3 col-sm-3 mr-auto">
                       <button class="btn btn-primary btn-block btn-round" (click)="createWine($event)">Save &amp;

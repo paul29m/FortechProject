@@ -35,6 +35,14 @@
                         </button>
                       </div>
                     </div>
+                    <div class="form-group">
+                      <h2>Payment <span class="icon-danger">*</span></h2>
+                      <div class="input-group border-input payment">
+                        <input value="" class="form-control border-input" type="text" name="money"
+                               [(ngModel)]="wine.cost" #money="ngModel">
+                        <span class="input-group-addon"><i class="fa fa-euro"></i></span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="row inline-column-row">

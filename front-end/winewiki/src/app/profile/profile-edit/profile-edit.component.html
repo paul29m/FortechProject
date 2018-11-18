@@ -53,6 +53,12 @@
                      [(ngModel)]="person.location" #location>
             </div>
             <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" class="form-control border-input" placeholder="Phone Number" name="phonenumber"
+                     [(ngModel)]="person.phonenumber" #phonenumber>
+            </div>
+
+            <div class="form-group">
               <label>Description</label>
               <textarea class="form-control textarea-limited"
                         placeholder="This is a textarea limited to 150 characters."

@@ -40,11 +40,17 @@ export class GlobalApp {
     } else {
       localStorage.setItem('description', '');
     }
+    if (person.description) {
+      localStorage.setItem('phonenumber', person.phonenumber);
+    } else {
+      localStorage.setItem('phonenumber', '');
+    }
     if (person.picture) {
       localStorage.setItem('picture', person.picture);
     } else {
       localStorage.setItem('picture', '');
     }
+
   }
 }
 

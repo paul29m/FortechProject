@@ -24,6 +24,7 @@ export class ProfileEditComponent implements OnInit {
     'firstname': localStorage.getItem('firstname'),
     'lastname': localStorage.getItem('lastname'),
     'description': localStorage.getItem('description'),
+    'phonenumber': localStorage.getItem('phonenumber'),
     'picture': localStorage.getItem('picture')
   };
   fileList: FileList;
@@ -38,6 +39,10 @@ export class ProfileEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.personService.getByUsername('getbyusername/', localStorage.getItem('username')).subscribe(thePerson => {
+      this.person = thePerson;
+      this.person.phonenumber = thePerson.phonenumber;
+    });
   }
 
   cancel(): void {
@@ -70,6 +75,7 @@ export class ProfileEditComponent implements OnInit {
               data.json().firstname,
               data.json().lastname,
               data.json().description,
+              data.json().phonenumber,
               data.json().picture
             );
             if (localStorage.getItem('personId') === person.id.toString()) {
@@ -94,6 +100,7 @@ export class ProfileEditComponent implements OnInit {
               data.json().firstname,
               data.json().lastname,
               data.json().description,
+              data.json().phonenumber,
               null
             );
             if (localStorage.getItem('personId') === person.id.toString()) {

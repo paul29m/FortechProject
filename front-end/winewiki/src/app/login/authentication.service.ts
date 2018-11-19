@@ -35,6 +35,7 @@ export class AuthenticationService {
     localStorage.removeItem('firstname');
     localStorage.removeItem('lastname');
     localStorage.removeItem('description');
+    localStorage.removeItem('phonenumber');
     localStorage.removeItem('picture');
   }
 }

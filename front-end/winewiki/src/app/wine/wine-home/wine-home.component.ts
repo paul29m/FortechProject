@@ -87,9 +87,13 @@ export class WineHomeComponent implements OnInit {
 
   ngOnInit() {
     if (!this.app.localStorageItem('personId')) {
-      this.personService.getByUsername('http://localhost:8080/api/person/getbyusername/', this.app.localStorageItem('username')).subscribe(person => {
-        if (this.app.localStorageItem('username') === person.username) {
-          this.app.setLocalStorage(person);
+      this.personService.getByUsername('http://localhost:8080/api/person/getbyusername/', this.app.localStorageItem('username'))
+        .subscribe(person => {
+          if (this.app.localStorageItem('username') === person.username) {
+            this.app.setLocalStorage(person);
+          }
+          if (this.app.localStorageItem('firstname') === '') {
+            this.router.navigate(['/profile/edit', this.app.localStorageItem('username')]);
         }
       });
     }

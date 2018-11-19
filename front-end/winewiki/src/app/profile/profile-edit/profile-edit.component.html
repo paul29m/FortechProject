@@ -31,6 +31,10 @@
         <div class="col-md-6 ml-auto mr-auto">
           <form class="settings-form">
             <div class="row">
+              <p style="color: red" *ngIf="person.firstname === '' || person.lastname === '' ">Please enter First Name
+                and Last Name </p>
+            </div>
+            <div class="row">
               <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                   <label>First Name</label>
@@ -52,10 +56,14 @@
               <input type="text" class="form-control border-input" placeholder="Location" name="location"
                      [(ngModel)]="person.location" #location>
             </div>
+            <div class="row">
+              <p style="color: red" *ngIf="!checkPhoneNumber()">Please enter valid Phone Number with 10 numerical
+                characters </p>
+            </div>
             <div class="form-group">
               <label>Phone Number</label>
               <input type="text" class="form-control border-input" placeholder="Phone Number" name="phonenumber"
-                     [(ngModel)]="person.phonenumber" #phonenumber>
+                     [(ngModel)]="person.phonenumber" #phonenumber required="required">
             </div>
 
             <div class="form-group">

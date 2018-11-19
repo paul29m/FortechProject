@@ -15,7 +15,7 @@
                     <div class="form-group">
                       <h2>Title <span class="icon-danger">*</span></h2>
                       <input class="form-control border-input" type="text" name="title" value="{{wine.title}}"
-                             [(ngModel)]="wine.title" #title="ngModel">
+                             [(ngModel)]="wine.title" #title="ngModel" required>
                     </div>
                     <div class="form-group">
                       <h2>Description <span class="counter" [class.icon-danger]="(255-wine.description.length) === 0">{{255 - wine.description.length}} Characters left</span>
@@ -36,7 +36,11 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <h2>Payment <span class="icon-danger">*</span></h2>
+                      <div class="row">
+                        <p style="color: red" *ngIf="!checkNumber()">Please enter valid price with at least 2 numerical
+                          characters </p>
+                      </div>
+                      <h2>Price <span class="icon-danger">*</span></h2>
                       <div class="input-group border-input payment">
                         <input value="" class="form-control border-input" type="text" name="money"
                                [(ngModel)]="wine.cost" #money="ngModel">

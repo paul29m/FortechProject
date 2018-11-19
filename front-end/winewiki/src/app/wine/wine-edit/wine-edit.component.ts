@@ -102,7 +102,13 @@ export class WineEditComponent implements OnInit {
     this.router.navigateByUrl('profile/' + localStorage.getItem('username'));
   }
 
-
+  checkNumber(): boolean {
+    if (this.wine.cost.toString().length >= 2) {
+      return !isNaN(Number(this.wine.cost));
+    } else {
+      return false;
+    }
+  }
   cancel(): void {
     this.router.navigateByUrl('profile/' + localStorage.getItem('username'));
   }

@@ -63,8 +63,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['wine/home'], {
             queryParams: {
               page: 0,
-              size: 2,
-              isOffer: true
+              size: 2
             }
           });
         },
@@ -77,7 +76,21 @@ export class LoginComponent implements OnInit {
   signUpUser() {
     this.personService.createPerson('/person/create', this.person)
       .subscribe(data => {
-        this.logInUser();
+        this.logInNewUser();
+      });
+  }
+
+  logInNewUser() {
+    this.loading = true;
+    this.authenticationService.login(this.person.username, this.person.password)
+      .subscribe(data => {
+        // this.router.navigate(['/profile/edit', this.person.username]);
+        this.router.navigate(['wine/home'], {
+          queryParams: {
+            page: 0,
+            size: 2
+          }
+        });
       });
   }
 

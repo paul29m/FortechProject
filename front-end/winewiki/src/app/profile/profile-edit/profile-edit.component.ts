@@ -113,6 +113,13 @@ export class ProfileEditComponent implements OnInit {
     }
   }
 
+  checkPhoneNumber(): boolean {
+    if (this.person.phonenumber.length === 10) {
+      return !isNaN(Number(this.person.phonenumber.toString()));
+    } else {
+      return false;
+    }
+  }
   deleteProfile() {
     if (confirm('Are you sure you want to delete your profile?')) {
       this.personService.deletePerson('/person/delete', this.person).subscribe(data => {
